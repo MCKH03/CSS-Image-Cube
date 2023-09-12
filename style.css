@@ -1,0 +1,75 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(to right bottom, black, rgba(0, 0, 0, 0.7));
+}
+
+.cube {
+  width: 35rem;
+  height: 35rem;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotate 10s infinite linear;
+}
+
+.face {
+  position: absolute;
+  width: 35rem;
+  height: 35rem;
+  background-size: cover;
+  background-position: center;
+}
+
+.front {
+  transform: translateZ(17.5rem);
+  background-image: url("./img/car-1.jpg");
+}
+
+.back {
+  transform: translateZ(-17.5rem) rotateY(180deg);
+  background-image: url("./img/car-2.jpg");
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(17.5rem);
+  background-image: url("./img/car-7.jpg");
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(17.5rem);
+  background-image: url("./img/car-4.jpg");
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(17.5rem);
+  background-image: url("./img/car-5.jpg");
+}
+
+.bottom {
+  transform: rotateX(-90deg) translateZ(17.5rem);
+  background-image: url("./img/car-8.jpg");
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
